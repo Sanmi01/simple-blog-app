@@ -18,10 +18,15 @@ app.get('/', (req, res) => res.send('INDEX'));
 
 // Author routes
 app.use('/author', require('./routes/author'));
-
-
-
-
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+db
+  .sync()
+  .then(result => {
+    console.log(result);
+    app.listen(PORT, console.log(`Server started on port ${PORT}`));
+  })
+  .catch(err => {
+    console.log(err);
+  });
+

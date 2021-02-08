@@ -4,7 +4,7 @@ module.exports = new Sequelize({
     storage: './db.development.sqlite',
     username: "manifestUser",
     password: "manifestPassword",
-    database: "SimpleBlogDB",
+    database: "oluwasanmidatabase",
     host: "manifestdbinstance.cgq0reqixqsd.us-east-1.rds.amazonaws.com",
     dialect: 'postgres'
 });  
