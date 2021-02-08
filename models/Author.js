@@ -1,17 +1,16 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
+module.exports = (sequelize, DataTypes) => {
+    var Author = sequelize.define('Author', {
+        first_name: DataTypes.STRING,
+        last_name: DataTypes.STRING,
+        username: DataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isEmail: true,
+            }
+        },
+    });
 
-const Author = db.define('Author', {
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    username: DataTypes.STRING,
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          isEmail: true,
-    }},
-})
-
-
-module.exports = Author;
+    return Author;
+};
