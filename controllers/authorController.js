@@ -1,4 +1,4 @@
-var Author = require('../models/author');
+var Author = require('../models/Author');
 var models = require('../models');
 
 // Display author create form on GET.
