@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3000;
 db
   .sync()
   .then(result => {
-    console.log(result);
+    // console.log(result);
     app.listen(PORT, console.log(`Server started on port ${PORT}`));
   })
   .catch(err => {

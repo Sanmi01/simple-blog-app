@@ -1,11 +1,10 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
-
-const Comment = db.define('Comment', {
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  var Comment = sequelize.define('Comment', {
     title: DataTypes.STRING,
     username: DataTypes.STRING,
     body: DataTypes.STRING,
-})
+  });
 
-
-module.exports = Comment;
+  return Comment;
+};

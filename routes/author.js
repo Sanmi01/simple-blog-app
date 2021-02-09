@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
-const Author = require('../models/Author');
+var Author = require('../models/Author');
 
 router.get('/', (req, res) =>
     Author.findAll()

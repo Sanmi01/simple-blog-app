@@ -1,10 +1,9 @@
-const Sequelize = require('sequelize');
-const db = require('../config/database');
-
-const Category = db.define('Category', {
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  var Category = sequelize.define('Category', {
     name: DataTypes.STRING,
     specification: DataTypes.STRING
-})
+  });
 
-
-module.exports = Category;
+  return Category;
+};
