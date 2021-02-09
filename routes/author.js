@@ -1,15 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
-var Author = require('../models/Author');
+const authorController = require('../controllers/authorController')
 
-router.get('/', (req, res) =>
-    Author.findAll()
-    .then(authors => {
-        console.log(authors);
-        res.sendStatus(200);
-    })    
-    .catch(err => console.log(err))
-);
+
+router.get('/', authorController.author_list);
 
 module.exports = router;
